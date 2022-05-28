@@ -1,7 +1,8 @@
-package com.eyepax_news_app
+package com.eyepax_news_app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.eyepax_news_app.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
