@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.auth.UserSignupFragment"
+    android:background="@color/background">
+
+    <TextView
+        android:text="@string/sign_up"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="@+id/margin_start_guideline"
+        app:layout_constraintEnd_toEndOf="@+id/margin_end_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/header_top_guideline"
+        app:layout_constraintBottom_toTopOf="@+id/header_bottom_guideline"
+        style="@style/header_style" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@+id/margin_start_guideline"
+        app:layout_constraintEnd_toEndOf="@+id/margin_end_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/header_bottom_guideline"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/padding_10">
+
+            <EditText
+                android:id="@+id/name_et"
+                android:hint="@string/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_top_guideline"
+                app:layout_constraintBottom_toTopOf="@+id/name_bottom_guideline"
+                style="@style/text_input_style" />
+
+            <EditText
+                android:id="@+id/user_name_et"
+                android:hint="@string/user_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_name_top_guideline"
+                app:layout_constraintBottom_toTopOf="@+id/user_name_bottom_guideline"
+                style="@style/text_input_style" />
+
+            <EditText
+                android:id="@+id/email_et"
+                android:hint="@string/email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_top_guideline"
+                app:layout_constraintBottom_toTopOf="@+id/email_bottom_guideline"
+                style="@style/text_input_style" />
+
+            <EditText
+                android:id="@+id/password_et"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password_top_guideline"
+                app:layout_constraintBottom_toTopOf="@+id/password_bottom_guideline"
+                style="@style/text_input_style" />
+
+            <EditText
+                android:id="@+id/reenter_password_et"
+                android:hint="@string/reenter_password"
+                android:inputType="textPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reenter_password_top_guideline"
+                app:layout_constraintBottom_toTopOf="@+id/reenter_password_bottom_guideline"
+                style="@style/text_input_style" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/signupBtn"
+                android:text="@string/sign_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up_button_top_guideline"
+                app:layout_constraintBottom_toTopOf="@+id/sign_up_button_bottom_guideline"
+                style="@style/button_style" />
+
+            <!-- Guidelines -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/name_top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/name_bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="45dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/user_name_top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="60dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/user_name_bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="105dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/email_top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="120dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/email_bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="165dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/password_top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="180dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/password_bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="225dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/reenter_password_top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="240dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/reenter_password_bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="285dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sign_up_button_top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="350dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/sign_up_button_bottom_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="395dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <!-- Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/header_top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.005" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/header_bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.055" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/margin_start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/margin_end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

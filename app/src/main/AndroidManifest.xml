@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EyePaxNewsApp">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.DashBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
