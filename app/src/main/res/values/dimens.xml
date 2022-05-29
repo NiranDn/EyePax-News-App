@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="header_25">25sp</dimen>
+
+    <!-- Radius sizes -->
+    <dimen name="radius_20">20dp</dimen>
+
+    <!-- Width sizes -->
+    <dimen name="width_1">1dp</dimen>
+
+    <!-- Padding sizes -->
+    <dimen name="padding_10">10dp</dimen>
+</resources>

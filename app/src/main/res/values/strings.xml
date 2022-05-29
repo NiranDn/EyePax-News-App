@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">EyePax-News-App</string>
+    <string name="eyepax_news_app">EyePax News App</string>
+    <string name="generatePrefPackageIdentifier">com.eyepax.news.app.general.prefs</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="new_user">New User</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="reenter_password">Re Enter Password</string>
 </resources>
