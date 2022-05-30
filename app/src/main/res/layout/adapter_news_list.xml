@@ -32,7 +32,7 @@
                 android:id="@+id/headerTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/playfair_semi_bold"
+                android:fontFamily="@font/playfair_display_semi_bold"
                 android:maxLines="3"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_16"

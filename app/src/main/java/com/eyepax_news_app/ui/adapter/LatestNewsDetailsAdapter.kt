@@ -10,8 +10,13 @@ import com.bumptech.glide.Glide
 import com.eyepax_news_app.R
 import com.eyepax_news_app.model.Article
 import kotlinx.android.synthetic.main.adapter_latest_new.view.*
+import kotlinx.android.synthetic.main.adapter_latest_new.view.authorTv
+import kotlinx.android.synthetic.main.adapter_latest_new.view.descriptionTV
+import kotlinx.android.synthetic.main.adapter_latest_new.view.headLineTv
+import kotlinx.android.synthetic.main.adapter_latest_new.view.imageView
+import kotlinx.android.synthetic.main.adapter_latest_new_details.view.*
 
-class LatestNewsAdapter: RecyclerView.Adapter<LatestNewsAdapter.HeadlineViewHolder>() {
+class LatestNewsDetailsAdapter: RecyclerView.Adapter<LatestNewsDetailsAdapter.HeadlineViewHolder>() {
     private var onItemClickListener: ((Article) -> Unit)? = null
 
     inner class HeadlineViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
@@ -33,7 +38,7 @@ class LatestNewsAdapter: RecyclerView.Adapter<LatestNewsAdapter.HeadlineViewHold
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadlineViewHolder {
         return HeadlineViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.adapter_latest_new,
+                R.layout.adapter_latest_new_details,
                 parent,
                 false
             )
@@ -43,6 +48,7 @@ class LatestNewsAdapter: RecyclerView.Adapter<LatestNewsAdapter.HeadlineViewHold
     override fun onBindViewHolder(holder: HeadlineViewHolder, position: Int) {
         val news = differ.currentList[position]
         holder.itemView.apply {
+            dateTv.text = news.publishedAt
             authorTv.text = news.author
             headLineTv.text = news.title
             descriptionTV.text = news.description

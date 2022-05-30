@@ -6,7 +6,7 @@
         <item name="android:layout_height">0dp</item>
         <item name="android:background">@drawable/bg_edit_text</item>
         <item name="android:padding">@dimen/padding_10</item>
-        <item name="android:fontFamily">@font/new_york_small</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:textSize">@dimen/text_16</item>
         <item name="android:textColor">@color/font_black</item>
         <item name="android:textColorHint">@color/font_gray</item>
@@ -15,7 +15,7 @@
     <style name="button_style">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
-        <item name="android:fontFamily">@font/new_york_small</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
         <item name="android:textSize">@dimen/text_16</item>
         <item name="cornerRadius">@dimen/radius_20</item>
     </style>
@@ -24,7 +24,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/header_25</item>
-        <item name="android:fontFamily">@font/new_york_medium_bold</item>
+        <item name="android:fontFamily">@font/playfair_display_semi_bold</item>
         <item name="android:textColor">@color/font_red</item>
     </style>
 </resources>

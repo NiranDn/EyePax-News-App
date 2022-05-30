@@ -47,4 +47,8 @@ class SharedPrefsManager @Inject constructor(
         }
     }
 
+    fun userLogout() {
+        saveUserLoginDetails = ""
+    }
+
 }

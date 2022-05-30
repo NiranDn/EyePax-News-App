@@ -11,6 +11,7 @@ import com.eyepax_news_app.R
 import com.eyepax_news_app.base.BaseFragment
 import com.eyepax_news_app.databinding.FragmentUserLoginBinding
 import com.eyepax_news_app.ui.AuthActivity
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_user_login.*
 import kotlinx.android.synthetic.main.fragment_user_login.signupBtn
 import kotlinx.android.synthetic.main.fragment_user_signup.*
@@ -43,9 +44,10 @@ class UserLoginFragment : BaseFragment() {
 
     private fun observeViewModel(view: View) {
         mViewModel.matchedDbUsersList.observe(viewLifecycleOwner) { users ->
-            // TODO convert user string to user object
             if (users?.isNotEmpty() == true) {
-                mViewModel.saveUser(users.first())
+                val gson = Gson()
+                val userDetails = gson.toJson(users.first())
+                mViewModel.saveUser(userDetails)
             } else {
                 showAlert("Oop, Please check user name and password", view)
             }

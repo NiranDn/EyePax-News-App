@@ -3,6 +3,8 @@ package com.eyepax_news_app.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.eyepax_news_app.R
 import com.eyepax_news_app.databinding.ActivityDashBoardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,6 +21,8 @@ class DashBoardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navigationView: BottomNavigationView = binding.navigationView
+        val navController = findNavController(R.id.dashboardNavFragment)
+        navigationView.setupWithNavController(navController)
     }
 
     fun showAndHideNavigationView(isShow: Boolean) {
@@ -27,5 +31,10 @@ class DashBoardActivity : AppCompatActivity() {
         } else {
             navigationView.visibility = View.GONE
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.dashboardNavFragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

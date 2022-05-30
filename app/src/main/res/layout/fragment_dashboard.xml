@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:text="Latest News"
             android:textSize="@dimen/text_18"
-            android:fontFamily="@font/new_york_small"
+            android:fontFamily="@font/playfair_display_semi_bold"
             android:textColor="@color/font_black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:text="See All ->"
             android:textSize="@dimen/text_16"
-            android:fontFamily="@font/nunito"
+            android:fontFamily="@font/nunito_semi_bold"
             android:textColor="@color/font_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
