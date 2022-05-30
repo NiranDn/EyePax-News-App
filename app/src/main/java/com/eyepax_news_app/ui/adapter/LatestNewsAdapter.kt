@@ -49,7 +49,6 @@ class LatestNewsAdapter: RecyclerView.Adapter<LatestNewsAdapter.HeadlineViewHold
             Glide
                 .with(this)
                 .load(news.urlToImage)
-                .error(R.drawable.ic_loading)
                 .into(imageView)
 
             setOnClickListener {

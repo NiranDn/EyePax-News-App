@@ -11,6 +11,7 @@ import com.eyepax_news_app.data.local.SharedPrefsManager
 import com.eyepax_news_app.databinding.FragmentUserSignupBinding
 import com.eyepax_news_app.model.User
 import com.eyepax_news_app.ui.AuthActivity
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_user_signup.*
 
 /**
@@ -49,7 +50,9 @@ class UserSignupFragment: BaseFragment() {
         mViewModel.userId.observe(viewLifecycleOwner) { userId ->
             if (userId != 0L) {
                 mUser.id = userId?.toInt()
-                mViewModel.saveUser(mUser)
+                val gson = Gson()
+                val userDetails = gson.toJson(mUser)
+                mViewModel.saveUser(userDetails)
                 (activity as AuthActivity).launchDashboardActivity()
             } else {
                 showAlert("Oops, Something when wrong", view)

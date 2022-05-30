@@ -6,9 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.eyepax_news_app.data.local.SharedPrefsManager
 import com.eyepax_news_app.model.User
 import com.eyepax_news_app.repository.AuthRepository
+import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
@@ -31,9 +33,9 @@ class AuthViewModel @Inject constructor(
         }
     }
 
-    fun saveUser(user: User) {
+    fun saveUser(user: String) {
         viewModelScope.launch {
-            sharedPrefsHelper.saveUserLoginDetails = user.toString()
+            sharedPrefsHelper.saveUserLoginDetails = user
         }
     }
 
@@ -54,6 +56,12 @@ class AuthViewModel @Inject constructor(
         viewModelScope.launch {
             val users = repository.getMatchedUser(username).value?.toMutableList()
             _matchedDbUsersList.postValue(users)
+        }
+    }
+
+    fun userLogout() {
+        viewModelScope.launch {
+            sharedPrefsHelper.userLogout()
         }
     }
 }
