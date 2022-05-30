@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_color">#FF3A44</color>
+    <color name="primary_color">#FF656D</color>
     <color name="background">#FFFFFFFF</color>
 
     <color name="purple_200">#FFBB86FC</color>
@@ -10,9 +10,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_gray">#9A9999</color>
+    <color name="red">#FF3A44</color>
+    <color name="light_red">#ffb3b6</color>
 
     <!-- Font color -->
     <color name="font_black">#FF000000</color>
     <color name="font_red">#FF3A44</color>
     <color name="font_gray">#878787</color>
+    <color name="font_blue">#0080FF</color>
 </resources>

@@ -4,15 +4,30 @@
     <dimen name="fragment_vertical_margin">16dp</dimen>
 
     <!-- Text sizes -->
+    <dimen name="text_10">10sp</dimen>
     <dimen name="text_16">16sp</dimen>
+    <dimen name="text_18">18sp</dimen>
     <dimen name="header_25">25sp</dimen>
 
     <!-- Radius sizes -->
     <dimen name="radius_20">20dp</dimen>
+    <dimen name="radius_35">35dp</dimen>
 
     <!-- Width sizes -->
     <dimen name="width_1">1dp</dimen>
 
     <!-- Padding sizes -->
+    <dimen name="padding_5">5dp</dimen>
     <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_15">15dp</dimen>
+
+    <!-- Margin sizes -->
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_35">35dp</dimen>
+
+    <dimen name="text_input_height">45dp</dimen>
+    <dimen name="latest_news_height">230dp</dimen>
+    <dimen name="list_news_height">180dp</dimen>
 </resources>

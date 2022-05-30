@@ -51,8 +51,8 @@ class UserLoginFragment : BaseFragment() {
             }
         }
 
-        mViewModel.userLoginDetails.observe(viewLifecycleOwner) { userLogingDetails ->
-            if (userLogingDetails?.isNotEmpty() == true) {
+        mViewModel.userLoginDetails.observe(viewLifecycleOwner) { userLoginDetails ->
+            if (userLoginDetails?.isNotEmpty() == true) {
                 (activity as AuthActivity).launchDashboardActivity()
             }
         }

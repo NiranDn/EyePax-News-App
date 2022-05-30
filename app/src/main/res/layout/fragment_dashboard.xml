@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.DashboardFragment"
+    android:background="@color/background">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/search_bar_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/searchEt"
+            android:hint="@string/search"
+            android:textSize="@dimen/text_16"
+            android:textColor="@color/font_red"
+            android:textColorHint="@color/font_gray"
+            android:fontFamily="@font/nunito"
+            android:drawableEnd="@drawable/ic_search"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_input_height"
+            android:layout_weight="8"
+            android:background="@drawable/bg_search_edit_text"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:paddingStart="@dimen/padding_10"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_notification_bell"
+            android:src="@drawable/ic_bell"/>
+        
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_view_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar_ll">
+
+        <TextView
+            android:id="@+id/headerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latest News"
+            android:textSize="@dimen/text_18"
+            android:fontFamily="@font/new_york_small"
+            android:textColor="@color/font_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/seeMoreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All ->"
+            android:textSize="@dimen/text_16"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/font_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_view_ll"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/headLinesRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginBottom="@dimen/margin_5"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/headLinesRv"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginBottom="@dimen/margin_5"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newsRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/categoryRv"
+                android:layout_margin="@dimen/margin_10" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
