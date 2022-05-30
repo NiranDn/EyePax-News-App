@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_18"
         android:textColor="@color/font_black"
+        android:fontFamily="@font/playfair_display_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -25,6 +26,7 @@
         android:textSize="@dimen/text_18"
         android:textColor="@color/font_black"
         android:layout_marginTop="@dimen/margin_35"
+        android:fontFamily="@font/playfair_display_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTv"/>
@@ -36,6 +38,7 @@
         android:textSize="@dimen/text_18"
         android:textColor="@color/font_black"
         android:layout_marginTop="@dimen/margin_35"
+        android:fontFamily="@font/playfair_display_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userNameTv"/>
@@ -46,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cornerRadius="@dimen/radius_20"
+        android:fontFamily="@font/playfair_display_semi_bold"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

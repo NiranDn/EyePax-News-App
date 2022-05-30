@@ -21,6 +21,7 @@ import com.eyepax_news_app.databinding.FragmentSearchNewsBinding
 import com.eyepax_news_app.ui.DashBoardActivity
 import com.eyepax_news_app.ui.adapter.CategoryAdapter
 import com.eyepax_news_app.ui.adapter.LatestNewsAdapter
+import com.eyepax_news_app.ui.adapter.LatestNewsDetailsAdapter
 import com.eyepax_news_app.ui.adapter.NewsListAdapter
 import com.eyepax_news_app.utils.Resource
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -43,7 +44,7 @@ class SearchNewsFragment : BaseFragment() {
     private val mViewModel by lazy { ViewModelProvider(requireActivity()).get(SearchNewsViewModel::class.java) }
     private lateinit var mCategoryAdapter: CategoryAdapter
     private lateinit var mNewsListAdapter: NewsListAdapter
-    private lateinit var mLatestNewsAdapter: LatestNewsAdapter
+    private lateinit var mLatestNewsDetailsAdapter: LatestNewsDetailsAdapter
     private val args: SearchNewsFragmentArgs by navArgs()
 
     private var mSelectedFiltersMap: HashMap<String, Int> = HashMap()
@@ -102,7 +103,7 @@ class SearchNewsFragment : BaseFragment() {
                     spinner.dismiss()
                     response.data?.let { latestNews ->
                         if (isScreenNavigation == NEWS_DETAILS) {
-                            mLatestNewsAdapter.differ.submitList(latestNews.articles.toList())
+                            mLatestNewsDetailsAdapter.differ.submitList(latestNews.articles.toList())
                         }
                     }
                 }
@@ -189,16 +190,16 @@ class SearchNewsFragment : BaseFragment() {
      * Setup Ui for latest news screen
      */
     private fun initNewsList() {
-        mLatestNewsAdapter = LatestNewsAdapter()
+        mLatestNewsDetailsAdapter = LatestNewsDetailsAdapter()
         newsRv.apply {
-            adapter = mLatestNewsAdapter
+            adapter = mLatestNewsDetailsAdapter
             layoutManager = LinearLayoutManager(activity)
             addOnScrollListener(scrollListener)
         }
     }
 
     private fun initClickListenerForNewsScreen() {
-        mLatestNewsAdapter.setOnItemClickListener {
+        mLatestNewsDetailsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply { putSerializable("article", it) }
             findNavController().navigate(
                 R.id.action_searchNewsFragment_to_newsDetailFragment,

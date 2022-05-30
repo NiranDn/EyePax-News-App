@@ -12,6 +12,7 @@ import com.eyepax_news_app.databinding.FragmentUserProfileBinding
 import com.eyepax_news_app.model.User
 import com.eyepax_news_app.ui.AuthActivity
 import com.eyepax_news_app.ui.DashBoardActivity
+import com.eyepax_news_app.ui.SplashActivity
 import com.eyepax_news_app.ui.auth.AuthViewModel
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_user_profile.*
@@ -42,7 +43,7 @@ class UserProfileFragment : BaseFragment() {
     private fun initClickListener() {
         logoutBtn.setOnClickListener {
             mViewModel.userLogout()
-            startActivity(Intent(activity, AuthActivity::class.java))
+            startActivity(Intent(activity, SplashActivity::class.java))
             (activity as DashBoardActivity).finish()
         }
     }

@@ -14,13 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EyePaxNewsApp">
         <activity
+            android:name=".ui.AuthActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.DashBoardActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.AuthActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
