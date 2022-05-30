@@ -1,4 +1,4 @@
-package com.eyepax_news_app.ui.dashboard
+package com.eyepax_news_app.ui.search
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,9 +14,9 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class DashboardViewModel @Inject constructor(
+class SearchNewsViewModel @Inject constructor(
     private val repository: NewsRepository
-): ViewModel(){
+): ViewModel() {
 
     private val _latestNews = MutableLiveData<Resource<ApiResponse>>()
     val latestNews: MutableLiveData<Resource<ApiResponse>> get() = _latestNews
@@ -38,16 +38,7 @@ class DashboardViewModel @Inject constructor(
         viewModelScope.launch {
             _latestNews.postValue(Resource.Loading())
             val response = repository.getLatestNews(countryCode = countryCode)
-            when (response.isSuccessful) {
-                response.isSuccessful -> {
-                    response.body()?.let { latestNews ->
-                        _latestNews.postValue( Resource.Success(latestNews))
-                    }
-                }
-                else -> {
-                    _latestNews.postValue(Resource.Error(CommonUtils.getErrorMessage(response.errorBody().toString())))
-                }
-            }
+            _latestNews.postValue(getNewsForNewPageByCategory(response))
         }
     }
 
@@ -61,17 +52,11 @@ class DashboardViewModel @Inject constructor(
     /**
      * Get filtered news by category
      */
-    fun filterNewsByCategory(category: String) {
+    fun filterNews(searchKey: String, sortBy: String) {
         viewModelScope.launch {
-            val response = repository.getNewsByCategory(category = category, pageIndex = pageIndex)
+            _filteredNews.postValue(Resource.Loading())
+            val response = repository.getFilteredNews(searchKey = searchKey, sortBy = sortBy, pageIndex = pageIndex)
             _filteredNews.postValue(getNewsForNewPageByCategory(response))
-        }
-    }
-
-    fun getNewsForNextPage(category: String) {
-        viewModelScope.launch {
-            pageIndex += 1
-            filterNewsByCategory(category)
         }
     }
 

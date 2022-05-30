@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_10"
+    tools:context=".ui.search.SearchNewsFragment"
+    android:background="@color/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_edit_text"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="@string/search" />
+
+        <TextView
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_25"
+            android:background="@drawable/bg_filter_btn"
+            android:paddingStart="@dimen/padding_15"
+            android:paddingTop="@dimen/padding_7"
+            android:paddingEnd="@dimen/padding_15"
+            android:paddingBottom="@dimen/padding_7"
+            android:text="@string/filter"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchViewEt" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryRv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/filter"
+            app:layout_constraintTop_toBottomOf="@+id/searchViewEt" />
+
+        <TextView
+            android:id="@+id/foundCountTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:fontFamily="@font/nunito"
+            android:textSize="@dimen/text_12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filter" />
+
+        <TextView
+            android:id="@+id/searchKeyWordTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:fontFamily="@font/nunito"
+            android:textSize="@dimen/text_12"
+            app:layout_constraintStart_toEndOf="@+id/foundCountTV"
+            app:layout_constraintTop_toBottomOf="@+id/filter" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchSection" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

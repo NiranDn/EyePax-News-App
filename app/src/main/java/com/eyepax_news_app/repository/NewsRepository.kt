@@ -25,4 +25,7 @@ class NewsRepository @Inject constructor(
 
     suspend fun getNewsByCategory(category: String, pageIndex: Int = 1) =
         newsApi.getNewsByCategory(category = category, pageSize = PAGE_SIZE, pageIndex = pageIndex)
+
+    suspend fun getFilteredNews(searchKey: String, sortBy: String, pageIndex: Int) =
+        newsApi.getFilteredNews(filter = searchKey, sortBy = sortBy, pageSize = PAGE_SIZE, pageIndex = pageIndex)
 }
