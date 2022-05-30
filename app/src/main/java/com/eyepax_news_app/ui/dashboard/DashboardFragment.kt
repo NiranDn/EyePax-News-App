@@ -135,6 +135,22 @@ class DashboardFragment : BaseFragment() {
             mViewModel.isClearPreviousData = true
             mViewModel.filterNewsByCategory(it.categoryName)
         }
+
+        mLatestNewsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply { putSerializable("article", it) }
+            findNavController().navigate(
+                R.id.action_dashboardFragment_to_newsDetailFragment,
+                bundle
+            )
+        }
+
+        mNewsListAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply { putSerializable("article", it) }
+            findNavController().navigate(
+                R.id.action_dashboardFragment_to_newsDetailFragment,
+                bundle
+            )
+        }
     }
 
     private fun initScrollListener() {
@@ -151,6 +167,16 @@ class DashboardFragment : BaseFragment() {
 
     private fun filterNewsByCategory() {
         mViewModel.filterNewsByCategory(category = mSelectedCategory)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        (activity as DashBoardActivity).showAndHideNavigationView(false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as DashBoardActivity).showAndHideNavigationView(true)
     }
 
     private val mScrollChangeListener =

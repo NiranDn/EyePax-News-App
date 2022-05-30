@@ -37,13 +37,4 @@ abstract class BaseFragment(): Fragment() {
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         return dialog
     }
-
-
-
-
-
-
-
-
-
 }
