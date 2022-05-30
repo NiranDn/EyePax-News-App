@@ -11,7 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.eyepax_news_app.Globals.NEWS_DETAILS
 import com.eyepax_news_app.Globals.PAGE_SIZE
+import com.eyepax_news_app.Globals.SEARCH_NEWS
 import com.eyepax_news_app.R
 import com.eyepax_news_app.base.BaseFragment
 import com.eyepax_news_app.databinding.FragmentDashboardBinding
@@ -148,6 +150,26 @@ class DashboardFragment : BaseFragment() {
             val bundle = Bundle().apply { putSerializable("article", it) }
             findNavController().navigate(
                 R.id.action_dashboardFragment_to_newsDetailFragment,
+                bundle
+            )
+        }
+
+        searchView.setOnClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("search", SEARCH_NEWS)
+            }
+            findNavController().navigate(
+                R.id.action_dashboardFragment_to_searchNewsFragment,
+                bundle
+            )
+        }
+
+        viewAll.setOnClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("search", NEWS_DETAILS)
+            }
+            findNavController().navigate(
+                R.id.action_dashboardFragment_to_searchNewsFragment,
                 bundle
             )
         }

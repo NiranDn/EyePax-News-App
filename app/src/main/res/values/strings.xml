@@ -16,4 +16,8 @@
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
     <string name="profile">Profile</string>
+    <string name="filter">Filter</string>
+    <string name="reset">Reset</string>
+    <string name="sort_by">Sort By</string>
+    <string name="save">Save</string>
 </resources>

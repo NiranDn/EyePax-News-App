@@ -2,6 +2,7 @@ package com.eyepax_news_app.remote
 
 import com.eyepax_news_app.Globals.API_KEY
 import com.eyepax_news_app.Globals.PAGE_SIZE
+import com.eyepax_news_app.Globals.SORT_BY
 import com.eyepax_news_app.model.ApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -23,5 +24,12 @@ interface ApiService {
         @Query("apiKey") apiKey: String = API_KEY,
         @Query("pageSize") pageSize: Int,
         @Query("page") pageIndex: Int = 1
+    ): Response<ApiResponse>
+
+    @GET("v2/everything")
+    suspend fun getFilteredNews(
+        @Query("q") filter: String, @Query("apiKey") apiKey: String = API_KEY,
+        @Query("sortBy") sortBy: String = SORT_BY,
+        @Query("pageSize") pageSize: Int, @Query("page") pageIndex: Int
     ): Response<ApiResponse>
 }

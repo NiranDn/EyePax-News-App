@@ -6,12 +6,12 @@ import okhttp3.ResponseBody
 import java.lang.Exception
 
 object CommonUtils {
-    fun getErrorMessage(responseBody: ResponseBody?): String {
-        try {
-            val jsonObject: JsonObject = Gson().fromJson(responseBody.toString(), JsonObject::class.java)
-            return jsonObject["message"].toString()
+    fun getErrorMessage(response: String?): String {
+        return try {
+            val jsonObject: JsonObject = Gson().fromJson(response, JsonObject::class.java)
+            jsonObject["message"].toString()
         } catch (e: Exception) {
-            return "Server error"
+            "Server error"
         }
     }
 }
