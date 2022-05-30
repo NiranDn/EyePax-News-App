@@ -30,4 +30,5 @@
     <dimen name="text_input_height">45dp</dimen>
     <dimen name="latest_news_height">230dp</dimen>
     <dimen name="list_news_height">180dp</dimen>
+    <dimen name="news_details_image_height">330dp</dimen>
 </resources>
