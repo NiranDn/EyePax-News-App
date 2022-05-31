@@ -27,7 +27,7 @@ class SearchNewsViewModel @Inject constructor(
     private val _filteredNews = MutableLiveData<Resource<ApiResponse>>()
     val filteredNews: MutableLiveData<Resource<ApiResponse>> get() = _filteredNews
 
-    private var pageIndex : Int = 0
+    private var pageIndex : Int = 1
     private var filterNewsResponse: ApiResponse? = null
     var isClearPreviousData = false
 
@@ -52,7 +52,7 @@ class SearchNewsViewModel @Inject constructor(
     /**
      * Get filtered news by category
      */
-    fun filterNews(searchKey: String, sortBy: String) {
+    fun filterNews(searchKey: String, sortBy: String = "popularity") {
         viewModelScope.launch {
             _filteredNews.postValue(Resource.Loading())
             val response = repository.getFilteredNews(searchKey = searchKey, sortBy = sortBy, pageIndex = pageIndex)

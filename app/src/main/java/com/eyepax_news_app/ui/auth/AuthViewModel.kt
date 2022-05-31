@@ -27,6 +27,9 @@ class AuthViewModel @Inject constructor(
     private val _userLoginDetails = MutableLiveData<String?>()
     val userLoginDetails: MutableLiveData<String?> get() = _userLoginDetails
 
+    private val _userNameMatchedList = MutableLiveData<List<User>?>()
+    val userNameMatchedList: MutableLiveData<List<User>?> get() = _userNameMatchedList
+
     fun signupUser(user: User) {
         viewModelScope.launch {
             _userId.postValue(repository.createUser(user))
@@ -55,7 +58,7 @@ class AuthViewModel @Inject constructor(
     fun userValidation(username: String) {
         viewModelScope.launch {
             val users = repository.getMatchedUser(username).value?.toMutableList()
-            _matchedDbUsersList.postValue(users)
+            _userNameMatchedList.postValue(users)
         }
     }
 
