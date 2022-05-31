@@ -15,6 +15,8 @@
 *   AndroidX - v1.5.0
 
 # Use cases
+IMPORTANT - API KEY MAY EXPIRE ON MAKING HEAVY REQUESTS SINCE KEY IS A FREE TRIAL VERSION
+
 *   Suer login / signup screen
     -In this Application use a room database for user registration and login, If user registered
      in the app then they will automatically login to the app and user will redirect to the dashboard
