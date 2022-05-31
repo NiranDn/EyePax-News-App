@@ -84,7 +84,7 @@ class SearchNewsFragment : BaseFragment() {
             searchListener()
 
             mViewModel.getCategories()
-            mViewModel.filterNews(mSelectedWord, mNewsFilter)
+            mViewModel.filterNews("Healthy")
         } else {
             // Latest news list
             searchSection.visibility = View.GONE
@@ -120,7 +120,9 @@ class SearchNewsFragment : BaseFragment() {
         }
 
         mViewModel.categories.observe(viewLifecycleOwner) { response ->
-            mCategoryAdapter.categoryies.submitList(response.toList())
+            if (isScreenNavigation == SEARCH_NEWS) {
+                mCategoryAdapter.categoryies.submitList(response.toList())
+            }
         }
 
         mViewModel.filteredNews.observe(viewLifecycleOwner) { response ->
@@ -170,7 +172,7 @@ class SearchNewsFragment : BaseFragment() {
         mCategoryAdapter.setOnItemClickListener {
             mSelectedWord = it.categoryName
             mViewModel.isClearPreviousData = true
-            mViewModel.filterNews(it.categoryName, mNewsFilter)
+            mViewModel.filterNews(it.categoryName)
         }
 
         mNewsListAdapter.setOnItemClickListener {
@@ -231,7 +233,7 @@ class SearchNewsFragment : BaseFragment() {
                         isTotalMoreThanVisible && isScrolling
             if (shouldPaginate) {
                 if (isScreenNavigation == SEARCH_NEWS) {
-                    mViewModel.filterNews(mSelectedWord, mNewsFilter)
+                    mViewModel.filterNews(mSelectedWord)
                 } else {
                     mViewModel.getLatestNews(COUNTRY_CODE)
                 }
@@ -278,10 +280,10 @@ class SearchNewsFragment : BaseFragment() {
             delay(600L)
             mViewModel.isClearPreviousData = true
             if (query.isNotEmpty()) {
-                mViewModel.filterNews(query, mNewsFilter)
+                mViewModel.filterNews(query)
                 mSearchedWord = query
             } else {
-                mViewModel.filterNews(mSelectedWord, mNewsFilter)
+                mViewModel.filterNews(mSelectedWord)
                 mSearchedWord = mSelectedWord
             }
 
