@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.eyepax_news_app.Globals
 import com.eyepax_news_app.base.BaseFragment
-import com.eyepax_news_app.data.local.SharedPrefsManager
 import com.eyepax_news_app.databinding.FragmentUserSignupBinding
 import com.eyepax_news_app.model.User
 import com.eyepax_news_app.ui.AuthActivity
@@ -34,19 +33,10 @@ class UserSignupFragment: BaseFragment() {
     }
 
     private fun initClickListeners(view: View) {
-        signupBtn.setOnClickListener { signupUser(view) }
+        registerBtn.setOnClickListener { signupUser(view) }
     }
 
     private fun observeViewModel(view: View) {
-        mViewModel.matchedDbUsersList.observe(viewLifecycleOwner) { users ->
-            if (users == null) {
-                // User signup
-                mViewModel.signupUser(mUser)
-            } else {
-                showAlert("User name already taken", view)
-            }
-        }
-
         mViewModel.userId.observe(viewLifecycleOwner) { userId ->
             if (userId != 0L) {
                 mUser.id = userId?.toInt()
@@ -58,6 +48,17 @@ class UserSignupFragment: BaseFragment() {
                 showAlert("Oops, Something when wrong", view)
             }
         }
+
+        mViewModel.userNameMatchedList.observe(viewLifecycleOwner) { users ->
+            if (users == null) {
+                // User signup
+                mViewModel.signupUser(mUser)
+            } else {
+                showAlert("User name already taken", view)
+            }
+        }
+
+
     }
 
     /**

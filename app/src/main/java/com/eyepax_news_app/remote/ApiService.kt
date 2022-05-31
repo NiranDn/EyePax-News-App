@@ -28,8 +28,10 @@ interface ApiService {
 
     @GET("v2/everything")
     suspend fun getFilteredNews(
-        @Query("q") filter: String, @Query("apiKey") apiKey: String = API_KEY,
+        @Query("q") filter: String,
+        @Query("apiKey") apiKey: String = API_KEY,
         @Query("sortBy") sortBy: String = SORT_BY,
-        @Query("pageSize") pageSize: Int, @Query("page") pageIndex: Int
+        @Query("pageSize") pageSize: Int,
+        @Query("page") pageIndex: Int
     ): Response<ApiResponse>
 }
